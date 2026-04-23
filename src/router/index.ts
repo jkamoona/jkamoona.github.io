@@ -27,7 +27,11 @@ const router = createRouter({
       component: () => import('../views/Contact.vue'),
     }
 
-  ] 
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    // Always scroll to top instantly when navigating
+    return { top: 0 }
+  }
 });
 
 export default router;

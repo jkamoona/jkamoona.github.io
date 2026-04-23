@@ -34,7 +34,7 @@
           </p>
         </div>
         
-        <!-- Animated CTA -->
+        <!-- Animated CTA --> 
         <div 
           class="cta mb-16"
           :class="{ 'animate-in': isVisible }"

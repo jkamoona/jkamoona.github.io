@@ -7,22 +7,9 @@ import Navbar from './components/NavBar.vue';
   <div id="app" class="min-h-screen bg-gray-50 text-gray-900">
     <Navbar />
     
-    <!-- Page transitions -->
+    <!-- Page content without transitions -->
     <main>
-      <router-view v-slot="{ Component }">
-        <transition 
-          name="page" 
-          mode="out-in"
-          enter-active-class="transition-all duration-500 ease-out"
-          enter-from-class="opacity-0 translate-y-4"
-          enter-to-class="opacity-100 translate-y-0"
-          leave-active-class="transition-all duration-300 ease-in"
-          leave-from-class="opacity-100 translate-y-0"
-          leave-to-class="opacity-0 -translate-y-4"
-        >
-          <component :is="Component" />
-        </transition>
-      </router-view>
+      <router-view />
     </main>
   </div>
 </template>
@@ -35,9 +22,12 @@ import Navbar from './components/NavBar.vue';
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -48,8 +38,6 @@ html, body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-rows: auto 1fr;
 }
 
 main {
@@ -68,6 +56,16 @@ main {
 section {
   width: 100vw !important;
   margin: 0 !important;
+  padding: 0 !important;
+}
+
+.about-page,
+.projects-page,
+.contact-page {
+  width: 100vw !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* Custom scrollbar for webkit browsers */
